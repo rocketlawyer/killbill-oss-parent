@@ -1972,4 +1972,28 @@
             </build>
         </profile>
     </profiles>
+     <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <url>http://f1tst-linbld100/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://f1tst-linbld100/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <repositories>
+        <repository>
+            <id>rocketlawyer snapshot</id>
+            <url>http://f1tst-linbld100/nexus/content/repositories/snapshots</url>
+        </repository>
+        <repository>
+            <id>rocketlawyer releases</id>
+            <url>http://f1tst-linbld100/nexus/content/repositories/releases</url>
+        </repository>
+        <repository>
+            <id>thirdparty</id>
+            <url>http://f1tst-linbld100/nexus/content/repositories/thirdparty</url>
+        </repository>
+    </repositories>
 </project>
