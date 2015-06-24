@@ -1417,7 +1417,7 @@
                     <version>1.6.2</version>
                     <extensions>true</extensions>
                     <configuration>
-
+						<skipStaging>true</skipStaging>
                     </configuration>
                 </plugin>
             </plugins>
