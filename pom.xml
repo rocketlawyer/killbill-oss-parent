@@ -1392,6 +1392,9 @@
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>1.6.2</version>
                     <extensions>true</extensions>
+                    <configuration>
+                    
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -1861,12 +1864,7 @@
                         <artifactId>nexus-staging-maven-plugin</artifactId>
                         <extensions>true</extensions>
                         <configuration>
-                            <serverId>ossrh-releases</serverId>
-                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                            <keepStagingRepositoryOnFailure>true</keepStagingRepositoryOnFailure>
-                            <keepStagingRepositoryOnCloseRuleFailure>true</keepStagingRepositoryOnCloseRuleFailure>
-                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                            <stagingProgressTimeoutMinutes>10</stagingProgressTimeoutMinutes>
+                            <skip>true</skip>
                         </configuration>
                     </plugin>
                 </plugins>
