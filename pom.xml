@@ -29,7 +29,7 @@
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
-    <url>http://github.com/killbill/killbill-oss-parent</url>
+    <url>http://github.com/rocketlawyer/killbill-oss-parent</url>
     <inceptionYear>2010</inceptionYear>
     <licenses>
         <license>
