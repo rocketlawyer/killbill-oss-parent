@@ -1,3 +1,69 @@
+0.32
+    Update killbill-base-plugin to 0.2.0
+
+0.31
+    Update killbill-platform to 0.6
+
+0.30
+    Update killbill-plugin-api to 0.14
+    Update killbill-client-java to 0.6
+
+0.29
+    Update killbill-commons to 0.4
+
+0.28
+    Rename killbill-plugin-api-routing to killbill-plugin-api-control
+    New postgresql and localtest-postgresql profiles
+    Profile localtest has been renamed localtest-mysql
+    Add io.airlift:testing-postgresql-server:0.3
+    Add org.postgresql:postgresql:9.4-1201-jdbc41
+    Add org.kill-bill.commons:killbill-embeddeddb-postgresql
+    Update killbill-plugin-api to 0.13
+    Update jmxutils to 1.18
+
+0.27
+    Update killbill-platform -> 0.5
+
+0.26
+    Add missing dependency for plugin-api-entitlement
+
+0.25
+    Update plugin-api to 0.12
+
+0.24
+    Upgrade killbill-api.version -> 0.19
+
+0.23
+    killbill-platform.version -> 0.4
+
+0.22
+    killbill-platform -> 0.3
+
+0.20
+    killbill-platform -> 0.3
+
+0.19
+    Add missing dependency for killbill-plugin-api-catalog
+
+0.18
+    killbill-plugin-api.version -> 0.11
+
+0.17
+    killbill-api.version -> 0.18
+
+0.16
+    Update killbill-api to 0.17
+
+0.15
+    Upgrade killbill-api to 0.16
+
+0.14
+    Update pom with latest released killbill-plugin-api 0.10
+
+0.13
+    Update killbill-api to 0.15
+    Update killbill-plugin-api to 0.10
+
 0.12
     Update killbill-client.version to 0.5
 
