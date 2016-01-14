@@ -25,7 +25,7 @@
     </parent>
     <groupId>org.kill-bill.billing</groupId>
     <artifactId>killbill-oss-parent</artifactId>
-    <version>0.33.2-SNAPSHOT</version>
+    <version>0.80.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Kill Bill OSS Parent</name>
     <description>Parent pom for Kill Bill projects</description>
@@ -104,12 +104,12 @@
         <jackson.version>2.4.3</jackson.version>
         <jersey.version>1.18.1</jersey.version>
         <jetty.version>9.2.10.v20150310</jetty.version>
-        <killbill-api.version>0.19</killbill-api.version>
-        <killbill-base-plugin.version>0.2.0</killbill-base-plugin.version>
-        <killbill-client.version>0.6</killbill-client.version>
-        <killbill-commons.version>0.4</killbill-commons.version>
-        <killbill-platform.version>0.6</killbill-platform.version>
-        <killbill-plugin-api.version>0.14</killbill-plugin-api.version>
+        <killbill-api.version>0.32</killbill-api.version>
+        <killbill-base-plugin.version>0.3.0</killbill-base-plugin.version>
+        <killbill-client.version>0.17</killbill-client.version>
+        <killbill-commons.version>0.12</killbill-commons.version>
+        <killbill-platform.version>0.19</killbill-platform.version>
+        <killbill-plugin-api.version>0.18</killbill-plugin-api.version>
         <logback.version>1.1.3</logback.version>
         <metrics-palominolabs.version>3.1.2</metrics-palominolabs.version>
         <metrics.version>3.1.1</metrics.version>
@@ -325,6 +325,11 @@
             <dependency>
                 <groupId>io.dropwizard.metrics</groupId>
                 <artifactId>metrics-ehcache</artifactId>
+                <version>${metrics.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.dropwizard.metrics</groupId>
+                <artifactId>metrics-graphite</artifactId>
                 <version>${metrics.version}</version>
             </dependency>
             <dependency>
@@ -1051,6 +1056,11 @@
             </dependency>
             <dependency>
                 <groupId>org.kill-bill.commons</groupId>
+                <artifactId>killbill-metrics</artifactId>
+                <version>${killbill-commons.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kill-bill.commons</groupId>
                 <artifactId>killbill-queue</artifactId>
                 <version>${killbill-commons.version}</version>
             </dependency>
@@ -1074,7 +1084,7 @@
             <dependency>
                 <groupId>org.mariadb.jdbc</groupId>
                 <artifactId>mariadb-java-client</artifactId>
-                <version>1.1.9</version>
+                <version>1.2.3</version>
             </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>
@@ -1417,6 +1427,16 @@
                             </configuration>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>1.9.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>templating-maven-plugin</artifactId>
+                    <version>1.0-alpha-3</version>
                 </plugin>
                 <plugin>
                     <groupId>org.eclipse.jetty</groupId>
