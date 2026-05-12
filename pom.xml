@@ -91,7 +91,7 @@
         <async-http-client.version>2.12.4</async-http-client.version>
         <ehcache.version>3.10.8</ehcache.version>
         <guava.version>33.3.1-jre</guava.version>
-        <guice.version>5.1.0</guice.version>
+        <guice.version>4.2.3</guice.version>
         <jackson.version>2.17.2</jackson.version>
         <jersey.version>1.19.4</jersey.version>
         <jetty.version>9.4.57.v20241219</jetty.version>
@@ -103,7 +103,7 @@
         <killbill-platform.version>0.36.9</killbill-platform.version>
         <killbill-plugin-api.version>0.23.1</killbill-plugin-api.version>
         <logback.version>1.2.13</logback.version>
-        <metrics-palominolabs.version>3.2.1</metrics-palominolabs.version>
+        <metrics-palominolabs.version>3.2.2</metrics-palominolabs.version>
         <metrics.version>3.2.6</metrics.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.version>1.7.36</slf4j.version>
@@ -246,7 +246,7 @@
             <dependency>
                 <groupId>com.ning</groupId>
                 <artifactId>compress-lzf</artifactId>
-                <version>1.1.0</version>
+                <version>1.2.0</version>
             </dependency>
             <dependency>
                 <groupId>com.palominolabs.metrics</groupId>
@@ -682,6 +682,12 @@
                 <version>1.0.0</version>
             </dependency>
             <dependency>
+                <groupId>org.glassfish.jaxb</groupId>
+                <artifactId>jaxb-runtime</artifactId>
+                <version>2.3.9</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
                 <groupId>org.hamcrest</groupId>
                 <artifactId>hamcrest-core</artifactId>
                 <version>2.2</version>
@@ -695,7 +701,7 @@
             <dependency>
                 <groupId>org.joda</groupId>
                 <artifactId>joda-money</artifactId>
-                <version>2.0.1</version>
+                <version>1.0.7</version>
             </dependency>
             <dependency>
                 <groupId>org.jooq</groupId>
@@ -1179,12 +1185,6 @@
             </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>
-                <artifactId>mockito-all</artifactId>
-                <version>3.12.4</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
                 <version>3.12.4</version>
                 <scope>test</scope>
@@ -1389,7 +1389,6 @@
                     <executions>
                         <execution>
                             <goals>
-                                <goal>jar</goal>
                                 <goal>test-jar</goal>
                             </goals>
                         </execution>
