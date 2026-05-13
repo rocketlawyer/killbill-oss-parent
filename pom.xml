@@ -90,16 +90,16 @@
         <!-- Async Http Client 3.x requires Java 11+; 2.12.x is the latest line for Java 8 -->
         <async-http-client.version>2.12.4</async-http-client.version>
         <ehcache.version>3.10.8</ehcache.version>
-        <guava.version>33.3.1-jre</guava.version>
+        <guava.version>33.6.0-jre</guava.version>
         <guice.version>4.2.3</guice.version>
         <jackson.version>2.17.2</jackson.version>
-        <jersey.version>1.19.4</jersey.version>
+        <jersey.version>2.48</jersey.version>
         <jetty.version>9.4.57.v20241219</jetty.version>
         <joda-time.version>2.12.7</joda-time.version>
         <killbill-api.version>0.50.1</killbill-api.version>
         <killbill-base-plugin.version>1.1.2</killbill-base-plugin.version>
         <killbill-client.version>0.40.9</killbill-client.version>
-        <killbill-commons.version>0.20.10</killbill-commons.version>
+        <killbill-commons.version>0.20.10.1</killbill-commons.version>
         <killbill-platform.version>0.36.9</killbill-platform.version>
         <killbill-plugin-api.version>0.23.1</killbill-plugin-api.version>
         <logback.version>1.2.13</logback.version>
@@ -259,21 +259,6 @@
                 <version>1.15</version>
             </dependency>
             <dependency>
-                <groupId>com.sun.jersey</groupId>
-                <artifactId>jersey-core</artifactId>
-                <version>${jersey.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.sun.jersey</groupId>
-                <artifactId>jersey-server</artifactId>
-                <version>${jersey.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.sun.jersey.contribs</groupId>
-                <artifactId>jersey-guice</artifactId>
-                <version>${jersey.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
                 <version>4.0.3</version>
@@ -412,8 +397,8 @@
             </dependency>
             <dependency>
                 <groupId>javax.ws.rs</groupId>
-                <artifactId>jsr311-api</artifactId>
-                <version>1.1.1</version>
+                <artifactId>javax.ws.rs-api</artifactId>
+                <version>2.1.1</version>
             </dependency>
             <dependency>
                 <groupId>joda-time</groupId>
@@ -686,6 +671,16 @@
                 <artifactId>jaxb-runtime</artifactId>
                 <version>2.3.9</version>
                 <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.core</groupId>
+                <artifactId>jersey-common</artifactId>
+                <version>${jersey.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish.jersey.core</groupId>
+                <artifactId>jersey-server</artifactId>
+                <version>${jersey.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.hamcrest</groupId>
@@ -2059,64 +2054,10 @@
             </build>
         </profile>
         <profile>
-            <id>jdk16</id>
+            <id>jdk18</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <configuration>
-                            <source>1.6</source>
-                            <target>1.6</target>
-                            <showDeprecation>true</showDeprecation>
-                            <showWarnings>true</showWarnings>
-                            <fork>true</fork>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>jdk17</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <configuration>
-                            <source>1.7</source>
-                            <target>1.7</target>
-                            <showDeprecation>true</showDeprecation>
-                            <showWarnings>true</showWarnings>
-                            <fork>true</fork>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-jar-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>jar</goal>
-                                    <goal>test-jar</goal>
-                                </goals>
-                                <configuration>
-                                    <classifier>jdk17</classifier>
-                                </configuration>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <skipIfEmpty>true</skipIfEmpty>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>jdk18</id>
             <build>
                 <plugins>
                     <plugin>
@@ -2136,12 +2077,8 @@
                         <executions>
                             <execution>
                                 <goals>
-                                    <goal>jar</goal>
                                     <goal>test-jar</goal>
                                 </goals>
-                                <configuration>
-                                    <classifier>jdk18</classifier>
-                                </configuration>
                             </execution>
                         </executions>
                         <configuration>
